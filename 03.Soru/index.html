@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03. Soru</title>
+  </head>
+  <body>
+    <button id="degistir">Onay Kutusunu Değiştir</button>
+    <label for="tik">Onay Kutusu</label>
+    <input type="checkbox" id="tik" />
+
+    <script>
+      var butonDegistir = document.getElementById("degistir");
+      var tik = document.getElementById("tik");
+
+      function onayKutusuDegistir() {
+        tik.checked = !tik.checked;
+      }
+
+      butonDegistir.addEventListener("click", onayKutusuDegistir);
+    </script>
+  </body>
+</html>

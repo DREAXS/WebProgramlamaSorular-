@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6.Soru</title>
+    <style>
+      img {
+        margin: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Resim Boyut Değiştirme</h1>
+
+    <div>
+      <img
+        id="resim1"
+        src="resimk1.png"
+        alt="Resim 1"
+        onclick="boyutDegistir('resim1', 'resim1.png', 'resimk1.png')"
+      />
+      <img
+        id="resim2"
+        src="resimk2.png"
+        alt="Resim 2"
+        onclick="boyutDegistir('resim2', 'resim2.png', 'resimk2.png')"
+      />
+      <img
+        id="resim3"
+        src="resimk3.png"
+        alt="Resim 3"
+        onclick="boyutDegistir('resim3', 'resim3.png', 'resimk3.png')"
+      />
+    </div>
+
+    <script>
+      function boyutDegistir(id, buyukSrc, kucukSrc) {
+        var resimElementi = document.getElementById(id);
+
+        if (resimElementi.src.includes(kucukSrc)) {
+          resimElementi.src = buyukSrc;
+        } else {
+          resimElementi.src = kucukSrc;
+        }
+      }
+    </script>
+  </body>
+</html>

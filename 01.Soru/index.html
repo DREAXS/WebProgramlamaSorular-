@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01.Soru</title>
+  </head>
+  <body>
+    <div>
+      <button id="onceki">Önceki</button>
+      <br />
+      <img id="resim" src="resim1.png" alt="Resim" style="max-height: 400px" />
+      <br />
+      <button id="sonraki">Sonraki</button>
+    </div>
+
+    <script>
+      var oncekiButon = document.getElementById("onceki");
+      var sonrakiButon = document.getElementById("sonraki");
+      var resim = document.getElementById("resim");
+
+      var indeks = 1;
+      var toplamResimler = 5;
+
+      function resmiGuncelle() {
+        resim.src = "resim" + indeks + ".png";
+      }
+
+      function oncekiTiklama() {
+        if (indeks === 1) {
+          indeks = toplamResimler;
+        } else {
+          indeks--;
+        }
+        resmiGuncelle();
+      }
+
+      function sonrakiTiklama() {
+        if (indeks === toplamResimler) {
+          indeks = 1;
+        } else {
+          indeks++;
+        }
+        resmiGuncelle();
+      }
+
+      oncekiButon.addEventListener("click", oncekiTiklama);
+      sonrakiButon.addEventListener("click", sonrakiTiklama);
+    </script>
+  </body>
+</html>
